@@ -1,0 +1,4 @@
+client/node_modules
+server/node_modules
+client/src/Components/ServicesPageComponent/media
+# DB_URL = mongodb+srv://AgroTraders:4gRfChBlfLnnOKGM@clusteragro.mvaz0yw.mongodb.net/?retryWrites=true&w=majority
