@@ -13,7 +13,7 @@ function Statistics() {
         <div className=" col-12 col-sm-6 col-md-3 mb-2">
           <div className="h-100  statBox p-3" >
             <h1 className="text-center statIcon darkgreen"><i className="fa-solid fa-person"></i></h1>
-            <h3 className="text-center" >5,500+ <br /> Registered Frams</h3>
+            <h3 className="text-center" >5,500+ <br /> Registered Farms</h3>
           </div>
         </div>
 

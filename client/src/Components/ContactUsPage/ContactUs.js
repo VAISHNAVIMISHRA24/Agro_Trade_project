@@ -130,7 +130,7 @@ function ContactUs() {
              Swal.fire({
                  position: "middle",
                  icon: "success",
-                 title: "Message Send Successfully",
+                 title: "Message Sent Successfully",
                  showConfirmButton: false,
                  timer: 2000
                });

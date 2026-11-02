@@ -76,19 +76,19 @@ function UserSingIn() {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Wrong Password!\nPlease try Again...",
+            text: "Wrong Password!\nPlease try again...",
           });
         } else if (data.message === "not exist") {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "User not exist. Please try Again...",
+            text: "User does not exist. Please try again...",
           });
         } else if (data.message === "error") {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Server Error. Please try Again...",
+            text: "Server Error. Please try again...",
           });
         }
 
@@ -97,7 +97,7 @@ function UserSingIn() {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something went wrong. Please try Again...",
+          text: "Something went wrong. Please try again...",
         });
       });
     }
@@ -144,13 +144,13 @@ function UserSingIn() {
                         Correct email!!
                       </div>
                       <div className="invalid-feedback">
-                        Invalid email!!!
+                        Invalid email!!
                       </div>
                     </div>
                   </div>
                   <div className="col-12 columns ">
                     <label htmlFor="validationCustom03" className="form-label midgreen" >
-                      password
+                      Password
                     </label>
                     <input placeholder="Enter Password" name="password" type="password" className="form-control" id="userSiginpassword" onChange={getData} required />
                     <div onClick={resetData}><UserFogotPassword /></div>
@@ -164,7 +164,7 @@ function UserSingIn() {
                     </div>
                   </div>
                   <h6 className="text-center text-info">
-                    Don't have account ? Create account {" "}
+                    Don't have an account? Create account {" "}
                     <span className="midgreen">Sign up</span>{" "}
                   </h6>
                 </form>

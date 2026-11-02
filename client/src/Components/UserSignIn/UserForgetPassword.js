@@ -73,7 +73,7 @@ function UserFogotPassword() {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Wrong Otp!\n Please enter currect otp...",
+          text: "Wrong OTP!\nPlease enter correct OTP...",
         });
       }
     });
@@ -133,14 +133,14 @@ function UserFogotPassword() {
         <Modal.Body>
           <div className="row m-0 w-100 p-0">
             <div className="col-12 col-lg-6  p-4" id="datacol" >
-              <h2 className="midgreen text-center ">Forogt Password</h2>
+              <h2 className="midgreen text-center ">Forgot Password</h2>
               <form className="row g-3 needs-validation" id="dataForm" onSubmit={handleSubmitEmail} noValidate>
                 <div className="col-12">
                   <label htmlFor="validationCustomUsername" className="form-label midgreen">
                     Email
                   </label>
                   <div className="has-validation">
-                    <input placeholder="Emter Enail Address" name="email" type="email" onChange={(e) => { validateEmail(e); handleEmail(e) }} className="form-control" id="fogetPasswordEmail" aria-describedby="inputGroupPrepend" required />
+                    <input placeholder="Enter Email Address" name="email" type="email" onChange={(e) => { validateEmail(e); handleEmail(e) }} className="form-control" id="fogetPasswordEmail" aria-describedby="inputGroupPrepend" required />
                     <div className="valid-feedback">
                       Correct email!!
                     </div>
@@ -164,13 +164,13 @@ function UserFogotPassword() {
                   </label>
                   <input placeholder="Enter OTP" type="number" name='otp' className="form-control" onChange={(e) => handleOtp(e)} id="validationCustom03" required />
                   <div className="invalid-feedback">
-                    Please provide a email.
+                    Please provide a valid OTP.
                   </div>
                 </div>
 
                 <div className="col-12 signupbtn-col">
                   <div className="d-grid gap-2">
-                    <button type="submit" name="" id="SignUpBtn" className="btn btn-success"  >Varify OTP</button>
+                    <button type="submit" name="" id="SignUpBtn" className="btn btn-success"  >Verify OTP</button>
                   </div>
                 </div>
               </form>
@@ -183,7 +183,7 @@ function UserFogotPassword() {
                   </label>
                   <input placeholder="Create Password" type="password" className="form-control" name="password" onChange={(e) => handleChangePassword(e)} id="validationCustom03" required />
                   <div className="invalid-feedback">
-                    Please provide a valid city.
+                    Please provide a valid password.
                   </div>
                 </div>
                 <div className="col-12">
@@ -192,7 +192,7 @@ function UserFogotPassword() {
                   </label>
                   <input placeholder="Confirm Password" type="password" className="form-control" name="cnfPassword" onChange={(e) => handleChangePassword(e)} id="validationCustom03" required />
                   <div className="invalid-feedback">
-                    Please provide a valid city.
+                    Please confirm your password.
                   </div>
                 </div>
                 <div className="col-12 signupbtn-col">
@@ -202,7 +202,7 @@ function UserFogotPassword() {
                 </div>
               </form>
 
-              <h6 className="text-center midgreen mt-3" onClick={() => { setShow(false) }} >Go to Sing in Page </h6>
+              <h6 className="text-center midgreen mt-3" onClick={() => { setShow(false) }} >Go to Sign in Page </h6>
             </div>
 
             <div className="col-6 m-0 p-0" id="imgcol">

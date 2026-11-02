@@ -70,7 +70,7 @@ function UserSingUp() {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Wrong Otp!\n Please enter currect otp...",
+          text: "Wrong OTP!\nPlease enter correct OTP...",
         });
       }
     }).catch((error) => {
@@ -119,7 +119,7 @@ function UserSingUp() {
     else {
       compnypasswordField.classList.remove('is-valid');
       compnypasswordField.classList.add('is-invalid');
-      password = true;
+      password = false;
     }
     if (e.target.value === "") {
       compnypasswordField.classList.remove('is-valid');
@@ -158,7 +158,7 @@ function UserSingUp() {
                     Email
                   </label>
                   <div className="has-validation">
-                    <input placeholder="Emter Enail Address" name="email" onChange={validateEmail} type="email" className="form-control" id="userSignUpemail" aria-describedby="inputGroupPrepend" required />
+                    <input placeholder="Enter Email Address" name="email" onChange={validateEmail} type="email" className="form-control" id="userSignUpemail" aria-describedby="inputGroupPrepend" required />
                     <div className="valid-feedback">
                       Correct email!!
                     </div>
@@ -173,7 +173,7 @@ function UserSingUp() {
                   </label>
                   <input placeholder="Enter Password" name="password" onChange={validatePassword} type="password" className="form-control" id="userSignuppassword" required />
                   <div className="valid-feedback">
-                    Stromg Password!!
+                    Strong Password!!
                   </div>
                   <div className="invalid-feedback">
                     Invalid password!!
@@ -186,7 +186,7 @@ function UserSingUp() {
                   </div>
                 </div>
 
-                <h6 className="text-center darkgreen" >Already have Account ? <span className="midgreen">Sign Up</span> </h6>
+                <h6 className="text-center darkgreen" >Already have an account? <span className="midgreen">Sign In</span> </h6>
 
               </form>
 
@@ -197,7 +197,7 @@ function UserSingUp() {
                   </label>
                   <input placeholder="Enter OTP" onChange={(event) => { setOtp(event.target.value) }} type="number" className="form-control" id="validationCustom03" required />
                   <div className="invalid-feedback">
-                    Please provide a valid city.
+                    Please provide a valid OTP.
                   </div>
                 </div>
 

@@ -87,7 +87,7 @@ function OrgForgetPassword() {
     const email = emailset.dealer_email;
 
     console.log("getOtp2", email + " sdddd ", checkFields + "sdddd", email);
-    getOtp({ email, password: "" });
+    getOtp({ email, password: "", message: "org change password" });
     showOtpfrom()
   }
 
@@ -136,14 +136,14 @@ function OrgForgetPassword() {
         <Modal.Body>
           <div className="row m-0 w-100 p-0">
             <div className="col-12 col-lg-6  p-4" id="datacol" >
-              <h2 className="midgreen text-center ">Forogt Password</h2>
+              <h2 className="midgreen text-center ">Forgot Password</h2>
               <form className="row g-3 needs-validation" id="dataForm" onSubmit={handleSubmitEmail} noValidate>
                 <div className="col-12">
                   <label htmlFor="validationCustomUsername" className="form-label midgreen">
                     Email
                   </label>
                   <div className="has-validation">
-                    <input placeholder="Emter Enail Address" name="dealer_email" type="email" onChange={(e) => { validateEmail(e); handleEmail(e) }} className="form-control" id="fogetPasswordEmail" aria-describedby="inputGroupPrepend" required />
+                    <input placeholder="Enter Email Address" name="dealer_email" type="email" onChange={(e) => { validateEmail(e); handleEmail(e) }} className="form-control" id="fogetPasswordEmail" aria-describedby="inputGroupPrepend" required />
                     <div className="valid-feedback">
                       Correct email!!
                     </div>
@@ -167,13 +167,13 @@ function OrgForgetPassword() {
                   </label>
                   <input placeholder="Enter OTP" type="number" name='otp' className="form-control" onChange={(e) => handleOtp(e)} id="validationCustom03" required />
                   <div className="invalid-feedback">
-                    Please provide a valid city.
+                    Please provide a valid OTP.
                   </div>
                 </div>
 
                 <div className="col-12 signupbtn-col">
                   <div className="d-grid gap-2">
-                    <button type="submit" name="" id="SignUpBtn" className="btn btn-success"  >Varify OTP</button>
+                    <button type="submit" name="" id="SignUpBtn" className="btn btn-success"  >Verify OTP</button>
                   </div>
                 </div>
               </form>
@@ -186,7 +186,7 @@ function OrgForgetPassword() {
                   </label>
                   <input placeholder="Create Password" type="password" className="form-control" name="password" onChange={(e) => handleChangePassword(e)} id="validationCustom03" required />
                   <div className="invalid-feedback">
-                    Please provide a valid city.
+                    Please provide a valid password.
                   </div>
                 </div>
                 <div className="col-12">
@@ -195,7 +195,7 @@ function OrgForgetPassword() {
                   </label>
                   <input placeholder="Confirm Password" type="password" className="form-control" name="cnfPassword" onChange={(e) => handleChangePassword(e)} id="validationCustom03" required />
                   <div className="invalid-feedback">
-                    Please provide a valid city.
+                    Please confirm your password.
                   </div>
                 </div>
                 <div className="col-12 signupbtn-col">
@@ -205,7 +205,7 @@ function OrgForgetPassword() {
                 </div>
               </form>
 
-              <h6 className="text-center midgreen mt-3" onClick={() => { setShow(false) }} >Go to Sing in Page </h6>
+              <h6 className="text-center midgreen mt-3" onClick={() => { setShow(false) }} >Go to Sign in Page </h6>
             </div>
 
             <div className="col-6 m-0 p-0" id="imgcol">

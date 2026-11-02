@@ -73,19 +73,19 @@ function OrgSingIn() {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Organization not registered. Please try Again...",
+            text: "Organization not registered. Please try again...",
           });
         }else if(data.message=="wrong password"){
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Wrong Password!\nPlease try Again...",
+            text: "Wrong Password!\nPlease try again...",
           });
         }else if(data.message=="error"){
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Server Error. Please try Again...",
+            text: "Server Error. Please try again...",
           });
         }
       }).catch((error) => {
@@ -93,7 +93,7 @@ function OrgSingIn() {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something went wrong. Please try Again...",
+          text: "Something went wrong. Please try again...",
         });
       });
     }
@@ -103,13 +103,13 @@ function OrgSingIn() {
   return (
     <>
       <p onClick={() => setLgShow(true)}>
-        <i className="bi bi-people-fill"></i>&nbsp;Orgnisation
+        <i className="bi bi-people-fill"></i>&nbsp;Organization
       </p>
 
       <Modal size="lg" show={lgShow} onHide={() => { setLgShow(false); resetData() }} backdrop="static" aria-labelledby="example-modal-sizes-title-lg">
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg" className="darkgreen">
-            Orgnisation
+            Organization
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="p-0">
@@ -137,7 +137,7 @@ function OrgSingIn() {
                   </div>
                   <div className="col-12  columns ">
                     <label htmlFor="validationCustom03" className="form-label midgreen" >
-                      password
+                      Password
                     </label>
                     <input placeholder="Enter Password" type="password" name="password" className="form-control" id="orgSiginpassword" onChange={getData} required />
                     <div className="valid-feedback">
@@ -157,7 +157,7 @@ function OrgSingIn() {
                     </div>
                   </div>
                   <h6 className="text-center text-info">
-                    Don't have account ? Create account {" "}
+                    Don't have an account? Create account {" "}
                     <span className="midgreen">Sign up</span>{" "}
                   </h6>
                 </form>

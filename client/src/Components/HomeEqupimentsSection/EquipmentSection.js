@@ -18,7 +18,7 @@ function EquipmentsSection() {
                   <div className="d-flex justify-content-end" >
                     <span className="badge bg-warning text-black mb-3">Available</span>
                   </div>
-                  <h3 className="card-title darkgreen">Jhon Deere Tractor</h3>
+                  <h3 className="card-title darkgreen">John Deere Tractor</h3>
                   <p className="card-text darkgreen ">
                     Type: Vehicle <br />
                     Price: Rs. 1500/hour  <br />

@@ -71,7 +71,7 @@ function DashoffCanvas({ name, ...props }) {
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li><a className="dropdown-item" href="#"></a></li>
-                      <li><Link className="dropdown-item" to="orgSignup"><i className="bi bi-people-fill"></i>&nbsp;Orgnisation</Link></li>
+                      <li><Link className="dropdown-item" to="orgSignup"><i className="bi bi-people-fill"></i>&nbsp;Organization</Link></li>
                     </ul>
                   </div>
 

@@ -35,14 +35,22 @@ export const indexGetOtpController = async(request,response)=>{
             }
         }
         if(check){
-            sendMail(email,subject,body,html);
-            var hashed_password = await bcrypt.hash(password,10)  
+            var hashed_password = password ? await bcrypt.hash(password, 10) : '';  
        
             TEMP_SESSION.email = email;
             TEMP_SESSION.password = hashed_password;
             TEMP_SESSION.otp = otp;
 
-            console.log("Email Sended Successfully. Otp : ",otp);
+            console.log(`[OTP Generated] OTP for ${email}: ${otp}`);
+
+            // Send email asynchronously and prevent server crash if SMTP authentication fails
+            const mailResult = await sendMail(email, subject, body, html);
+            if (mailResult && mailResult.success) {
+                console.log("Email Sent Successfully. OTP : ", otp);
+            } else {
+                console.warn(`[Email Warning] Could not deliver email via SMTP (${mailResult?.error?.message || "Check credentials"}). OTP for testing is: ${otp}`);
+            }
+
             response.status(200).json({message:"success"});
         }else{
             response.status(200).json({message:"not exist"});
@@ -64,7 +72,7 @@ export const indexUserRegistrationController = async(request,response)=>{
         try{
             const existingUser = await users.findOne({email:email});
             if(existingUser){
-                console.log("User Allready Exist.");
+                console.log("User Already Exists.");
                 response.json({message:"exist"});
             }
             else{
@@ -155,7 +163,7 @@ export const indexOrganizationRegistrantionController = async(request,response)=
         try{
             var existingOrg = await organizations.findOne({dealer_email:request.body.dealer_email}); 
             if(existingOrg){
-                console.log("Organization allready registered.");
+                console.log("Organization already registered.");
                 response.status(200).json({message:"exist"});
             }else{
                 var hashed_password = await bcrypt.hash(request.body.password,10)  

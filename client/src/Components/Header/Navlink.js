@@ -52,7 +52,7 @@ function Nablinks() {
     <>
       <div
         id="nacLinksdiv"
-        className="bg-darkgreen d-felx aling-items-center"
+        className="bg-darkgreen d-flex align-items-center"
       >
         <div className="row m-0">
           <div className="col-md-8 offset-1">
@@ -202,7 +202,7 @@ function Nablinks() {
                       </li>
                       <li>
                         <Link className="dropdown-item" to="/orgSignup">
-                          <i className="bi bi-people-fill"></i>&nbsp;Orgnisation
+                          <i className="bi bi-people-fill"></i>&nbsp;Organization
                         </Link>
                       </li>
                     </ul>

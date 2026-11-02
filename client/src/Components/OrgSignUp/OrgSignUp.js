@@ -350,14 +350,14 @@ function OrgSingUp() {
       handleShow();
     }
   }
-  const [varifyText, setvarifyText] = useState("Varify")
+  const [varifyText, setvarifyText] = useState("Verify")
   function handleSubmitData(e) {
     const elements = document.querySelectorAll(`.${"is-valid"}`);
     elements.forEach(element => {
       element.classList.remove("is-valid");
     });
     document.getElementById("spinner").classList.remove('d-none');
-    setvarifyText("varifying")
+    setvarifyText("verifying")
 
     const formData = new FormData();
     for (var key in orgObj) {
@@ -372,9 +372,9 @@ function OrgSingUp() {
       orgRegister(formData).then((data) => {
         console.log("data.message", data.message);
         if (data.message == "success") {
-          setvarifyText("varified")
+          setvarifyText("verified")
           handleClose()
-          setvarifyText("varify");
+          setvarifyText("verify");
           dispatch(setOrgData(data.log));
           dispatch(setRoleStatus({ role: data.role, data: data.log, status: true }));
           console.log('datalog', data.log);
@@ -385,44 +385,44 @@ function OrgSingUp() {
           Swal.fire({
             position: "middle",
             icon: "success",
-            title: "Welcome to Agrotrage🙏",
+            title: "Welcome to Agrotrade🙏",
             showConfirmButton: false,
             timer: 2000
           });
           navigate('/orgnization');
         } else if (data.message == "exist") {
           setvarifyText("error")
-          setvarifyText("varify");
+          setvarifyText("verify");
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Organozation allready registered. Please try Again...",
+            text: "Organization already registered. Please try again...",
           });
         } else if (data.message == "error") {
           setvarifyText("error")
-          setvarifyText("varify");
+          setvarifyText("verify");
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Something went wrong. Please try Again...",
+            text: "Something went wrong. Please try again...",
           });
         } else if (data.message == "wrong otp") {
           setvarifyText("Invalid")
-          setvarifyText("varify");
+          setvarifyText("verify");
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Wrong Otp!\nPlease enter valid otp...",
+            text: "Wrong OTP!\nPlease enter valid OTP...",
           });
         }
       }).catch((error) => {
         setvarifyText("error")
-        setvarifyText("varify");
+        setvarifyText("verify");
         console.log(error);
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something went wrong. Please try Again...",
+          text: "Something went wrong. Please try again...",
         });
       });
     }, 3000);
@@ -437,13 +437,13 @@ function OrgSingUp() {
         <div className="container  bg-white p-0" id="OrgFromBox" >
           <div className="row w-100 m-0 g-0 ">
             <div className="col-12 col-md-12 col-lg-7 m-0 pt-3" >
-              <h2 className="midgreen text-center">Orgnisation Sign Up</h2>
+              <h2 className="midgreen text-center">Organization Sign Up</h2>
               <form id="orgForm" onSubmit={handleSubmitEmail} encType="multipart/form-data">
                 <div className="row m-0 w-100" >
 
                   <div className=" col-12 col-md-6  p-2">
-                    <label htmlFor="validationServer01" className="form-label midgreen">Orgnisation name</label>
-                    <input name="company_name" type="text" className="form-control form-control-sm" onChange={validateName} id="nameField" placeholder="Enter orgnisation name" required />
+                    <label htmlFor="validationServer01" className="form-label midgreen">Organization name</label>
+                    <input name="company_name" type="text" className="form-control form-control-sm" onChange={validateName} id="nameField" placeholder="Enter organization name" required />
                     <div className="valid-feedback">
                       Looks good!!
                     </div>
@@ -453,13 +453,13 @@ function OrgSingUp() {
                   </div>
 
                   <div className=" col-12 col-md-6  p-2">
-                    <label htmlFor="validationServer01" className="form-label midgreen">Regestration  name</label>
-                    <input name="reg_name" type="text" className="form-control form-control-sm" id="regestrName" onChange={validateName} placeholder="Enter regestration name" required />
+                    <label htmlFor="validationServer01" className="form-label midgreen">Registration name</label>
+                    <input name="reg_name" type="text" className="form-control form-control-sm" id="regestrName" onChange={validateName} placeholder="Enter registration name" required />
                     <div className="valid-feedback">
-                      Correct regestration name!!
+                      Correct registration name!!
                     </div>
                     <div className="invalid-feedback">
-                      Invalid regestration name!!
+                      Invalid registration name!!
                     </div>
                   </div>
 
@@ -467,17 +467,17 @@ function OrgSingUp() {
                     <label htmlFor="validationServer01" className="form-label midgreen">Registration number</label>
                     <input name="reg_number" type="text" className="form-control form-control-sm" id="restrNumber" onChange={validateRegnum} placeholder="Enter registration number" required />
                     <div className="valid-feedback">
-                      Correct regestration number!!
+                      Correct registration number!!
                     </div>
                     <div className="invalid-feedback">
-                      Invalid regestration number!!
+                      Invalid registration number!!
                     </div>
                   </div>
 
 
                   <div className=" col-12 col-md-6  p-2">
-                    <label htmlFor="validationServer01" className="form-label midgreen m-0 mt-1">Orgnisation email</label>
-                    <input name="org_email" type="email" className="form-control form-control-sm" id="compnyEmailField" onChange={validateEmail} placeholder="Enter orgnisation email" required />
+                    <label htmlFor="validationServer01" className="form-label midgreen m-0 mt-1">Organization email</label>
+                    <input name="org_email" type="email" className="form-control form-control-sm" id="compnyEmailField" onChange={validateEmail} placeholder="Enter organization email" required />
                     <div className="valid-feedback">
                       Correct email!!
                     </div>
@@ -498,22 +498,22 @@ function OrgSingUp() {
                   </div>
 
                   <div className=" col-12 col-md-6 p-2">
-                    <label htmlFor="validationServer01" className="form-label midgreen m-0 mt-1">Orgnisation Type</label>
+                    <label htmlFor="validationServer01" className="form-label midgreen m-0 mt-1">Organization Type</label>
                     <select name="org_type" className="form-control form-control-sm" onChange={checkField} id="orgnisationtype" >
-                      <option value="null">Select Orgnisation Type</option>
+                      <option value="null">Select Organization Type</option>
                       <option value="Option 1">Option 1</option>
                       <option value="Option 2">Option 2</option>
                     </select>
                     <div className="valid-feedback">
-                      Orgnisation type selected!!
+                      Organization type selected!!
                     </div>
                     <div className="invalid-feedback">
-                      Please select orgnisation type!!
+                      Please select organization type!!
                     </div>
                   </div>
 
                   <div className=" col-12 col-md-6 p-2">
-                    <label htmlFor="validationServer01" className="form-label midgreen m-0 mt-1">Orgnisation Image </label>
+                    <label htmlFor="validationServer01" className="form-label midgreen m-0 mt-1">Organization Image </label>
                     <input type="file" className="form-control form-control-sm" name="org_image" onChange={checkField} id="image" />
                   </div>
 
@@ -567,7 +567,7 @@ function OrgSingUp() {
                   </div>
 
                   <div className=" col-12 col-md-6  p-2">
-                    <label htmlFor="validationServer01" className="form-label midgreen m-0 mt-1">Orgnisation description</label>
+                    <label htmlFor="validationServer01" className="form-label midgreen m-0 mt-1">Organization description</label>
                     <textarea name="org_description" className="form-control form-control-sm " rows="3" cols="20" onChange={checkField} id="description" required ></textarea>
                     <div className="valid-feedback">
                       Correct description!!
@@ -668,7 +668,7 @@ function OrgSingUp() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>OTP varification</Modal.Title>
+          <Modal.Title>OTP Verification</Modal.Title>
         </Modal.Header>
         <Modal.Body>
 
@@ -677,7 +677,7 @@ function OrgSingUp() {
             id="otpfield"
             placeholder="Enter otp"
           />
-          <p>AN OTP is been sent on {orgObj.dealer_email}. Please Check ypur email.</p>
+          <p>An OTP has been sent to {orgObj.dealer_email}. Please check your email.</p>
 
         </Modal.Body>
         <Modal.Footer>

@@ -57,7 +57,7 @@ function AboutUs() {
             <div className="row">
               <div className="col-lg-5 col-md-6 col-sm-12 col-xs-12 ">
                 <h1 className=" text-center text-white">Why Agrotrade</h1>
-                <p id="content">"Discover Agro Trade, your all-in-one platform revolutioning agriculture.We specialize in offering online land for cold storage to factory owners and farm rentals.Our commitment extends beyond transaction, providing farmers with a supportive community and expert guidance to cultivate new experience and adopt modern farming techniques. Join Agro Trade in cultivating a sustainable and thriving agricultural future. Your success is our harves"</p>
+                <p id="content">"Discover Agro Trade, your all-in-one platform revolutionizing agriculture. We specialize in offering online land for cold storage to factory owners and farm rentals. Our commitment extends beyond transactions, providing farmers with a supportive community and expert guidance to cultivate new experience and adopt modern farming techniques. Join Agro Trade in cultivating a sustainable and thriving agricultural future. Your success is our harvest"</p>
                 {/* <p className="mt-5" id="forLink">Learn More &nbsp;<i className="bi bi-arrow-right"></i></p> */}
               </div>
               <div className="offset-lg-2 offset-md-1 col-lg-5 col-md-5 col-sm-12 col-xs-12  ">
